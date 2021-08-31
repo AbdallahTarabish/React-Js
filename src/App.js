@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import BackDrop from "./Component/Backdrop";
+import Modal from "./Component/Modal";
+import Todo from "./Component/Todo";
+function Test() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Abdalla's TO DO'S</h1>
+      <Todo text="Laravel" />
+      <Todo text="API" />
+      <Todo text="PHP" />
+      <Modal />
+      <BackDrop />
     </div>
   );
 }
 
-export default App;
+export default Test;
