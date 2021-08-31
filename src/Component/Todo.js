@@ -1,8 +1,16 @@
+import { useState } from "react";
+import BackDrop from "./Backdrop";
+import Modal from "./Modal";
+
 function Todo(props) {
+  const [isOpen, modalState] = useState(false);
   function deleteHandler() {
-    console.log(props.text);
+    modalState(true);
   }
 
+  function closeHandler() {
+    modalState(false);
+  }
   return (
     <div className="card">
       <h2>{props.text}</h2>
@@ -11,6 +19,8 @@ function Todo(props) {
           Delete
         </button>
       </div>
+      {isOpen ? <Modal onCancel={closeHandler} /> : null}
+      {isOpen ? <BackDrop onCancel={closeHandler} /> : null}
     </div>
   );
 }
